@@ -1,0 +1,260 @@
+#i{
+background-color: #007bff;
+color: #ffffff;
+width: 6cm;
+padding-left: 3cm;
+height: 18px;
+border-radius: 11px;
+
+}
+
+#tit{
+    /* Style for the title */
+  
+    font-size: 32px; 
+    font-weight: bold; 
+    text-align: center; 
+    text-transform: uppercase; 
+    letter-spacing: 2px;    
+    color: #333;     
+    margin-top: 20px;
+    margin-bottom: 20px;   
+    border-bottom: 2px solid #333;
+  
+  }
+  
+  
+
+
+
+
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap');
+    /* Style for the card */
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+
+
+h2{
+	text-align: center;
+	margin-bottom: 5rem;
+	font-size: 4rem;
+	
+}
+
+.all-products{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.product{
+	overflow: hidden;
+	background: #ffffff;
+	color: #21201e;
+	text-align: center;
+	width: 240px;
+	height: 500px;
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-radius: 1.2rem;
+	margin: 2rem;
+}
+
+.product .product-title, .product .product-price{
+	font-size: 18px;
+}
+
+.product:hover img{
+	scale:  1.1;
+}
+
+.product:hover {
+	box-shadow: 5px 15px 25px #c2c2c2;
+}
+
+.product img {
+	height: 200px;
+	margin: 1rem;
+	transition: all 0.3s;
+}
+
+.product a:link, .product a:visited{
+	color: #dbdada;
+	display: inline-block;
+	text-decoration: none;
+	background-color:#007bff;
+	padding: 1.2rem 3rem;
+	border-radius: 1rem;
+	margin-top: 1rem;
+	font-size: 14px;
+	transition: all 0.2s;
+}
+
+.product a:hover{
+	transform: scale(1.1);
+}
+
+
+.star-rating .star-yellow {
+    color: rgb(255, 217, 0);
+  }
+
+
+
+  .card-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 255, 255, 0.7);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	transition: all 0.3s ease-in-out;
+  }
+  
+  .card:hover .card-overlay {
+	opacity: 1;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+	body{
+	  line-height: 1.5;
+	  font-family: 'Poppins', sans-serif;
+	}
+	*{
+	  margin:0;
+	  padding:0;
+	  box-sizing: border-box;
+	}
+	.container{
+	  max-width: 1170px;
+	  margin:auto;
+	}
+	.row{
+	  display: flex;
+	  flex-wrap: wrap;
+	}
+	ul{
+	  list-style: none;
+	}
+	.footer{
+	  background-color: #f7f2f2;
+		padding: 70px 0;
+	}
+	.footer-col{
+	   width: 25%;
+	   padding: 0 15px;
+	}
+	.footer-col h4{
+	  font-size: 18px;
+	  color: #131313;
+	  text-transform: capitalize;
+	  margin-bottom: 35px;
+	  font-weight: 500;
+	  position: relative;
+	}
+	.footer-col h4::before{
+	  content: '';
+	  position: absolute;
+	  left:0;
+	  bottom: -10px;
+	  background-color: #db2e68;
+	  height: 2px;
+	  box-sizing: border-box;
+	  width: 60px;
+	}
+	.footer-col ul li:not(:last-child){
+	  margin-bottom: 10px;
+	}
+	.footer-col ul li a{
+	  font-size: 16px;
+	  text-transform: capitalize;
+	  color: #353434;
+	  text-decoration: none;
+	  font-weight: 300;
+	  color: #424242;
+	  display: block;
+	  transition: all 0.3s ease;
+	}
+	.footer-col ul li a:hover{
+	  color: #000000;
+	  padding-left: 8px;
+	}
+	.footer-col .social-links a{
+	  display: inline-block;
+	  height: 40px;
+	  width: 40px;
+	  background-color: rgba(14, 14, 14, 0.2);
+	  margin:0 10px 10px 0;
+	  text-align: center;
+	  line-height: 40px;
+	  border-radius: 50%;
+	  color: #ffffff;
+	  transition: all 0.5s ease;
+	}
+	.footer-col .social-links a:hover{
+	  color: #24262b;
+	  background-color: #ffffff;
+	}
+	body {
+		background-color: #f8f9fa;
+		color: #212529;
+		font-family: Arial, sans-serif;
+	  }
+	/*responsive*/
+	@media(max-width: 767px){
+	  .footer-col{
+		width: 50%;
+		margin-bottom: 30px;
+	}
+	}
+	@media(max-width: 574px){
+	  .footer-col{
+		width: 100%;
+	}
+	}
+	.im:hover{
+		text-shadow: 3px 3px 6px black;
+	}
+	/*timer*/
+	.timer {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 2rem;
+		font-weight: bold;
+		color: rgb(39, 39, 39);
+		background-color: #f7f2f2;
+		border-radius: 5px;
+		padding: 10px;
+	  }
+	  
+	  .timer__colon {
+		margin: 0 10px;
+	  }
+	  
+	  .timer__hours,
+	  .timer__minutes,
+	  .timer__seconds {
+		width: 30px;
+		text-align: center;
+	  }
+	  body {
+		font-family: Arial, sans-serif;
+		  
+	  }
+	  

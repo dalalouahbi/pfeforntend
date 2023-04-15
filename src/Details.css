@@ -1,0 +1,101 @@
+header {
+	background-color: #f8f9fa;
+	padding: 20px 0;
+}
+
+.navbar-brand {
+	font-size: 24px
+}
+
+.product-section {
+margin-top: 50px;
+margin-bottom: 50px;
+}
+
+.product-details {
+margin-top: 50px;
+margin-bottom: 50px;
+}
+
+footer {
+background-color: #f8f9fa;
+padding: 20px 0;
+}
+
+footer p {
+font-size: 14px;
+margin: 0;
+}
+
+
+  h5 {
+    margin-top: 0;
+  }
+  p {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .heart-icon-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+  
+  .heart-icon {
+	cursor: pointer;
+	font-size: 2rem;
+	color: gray;
+  }
+  
+  .heart-icon.liked {
+	color: red;
+  }
+  
+
+
+
+
+  
+
+
+
+  .card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 200px;
+	height: 150px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	margin: 10px;
+	padding: 10px;
+  }
+  
+  .card-title {
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 10px;
+  }
+  
+  .card-info {
+	font-size: 36px;
+	font-weight: bold;
+  }
+  body {
+	font-family: Arial, sans-serif;
+	  
+  }
+  img:hover {
+	opacity: 0.9; /* decrease opacity on hover */
+	transform: scale(1.07); /* scale up the image on hover */
+	transition: all 0.4s ease-in-out; /* add smooth transition */
+  }
+  p{
+	color: #4d4c4c;
+  }
+  .h1{
+	color: rgb(41, 41, 41);
+	text-shadow: 2px 2px 2px ;
+	
+  }
