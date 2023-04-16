@@ -2,43 +2,46 @@ import React from 'react'
 import Card from "./Timer";
 import Shop from "./Shop";
 import Home from "./Home";
+import Aff from "./Aff";
+
 import Contact from "./Contact"
 import Details from './Details';
 import SignUp from "./SignUp"
+import Single from "./Single"
+
 import { BrowserRouter as Router ,Route,Routes} from "react-router-dom";
 
 import "./App.css";
-import Product from './Product';
+import Products from './Product';
 
  function Routee() {
-const data = [
-  {id:"1", title: 'THE POWER OF NOW', description: '49',img:"./img/photo2.jpg" },
-  {id:"2", title: 'HOUSE OF SKY AND BREATH', description: '39',img:"./img/photo3.jpg",link:"/Detail2" },
-  {id:"3", title: 'RICH DAD POOR DAD', description: '49',img:"./img/photo10.jpg" ,link:"/Detail3"},
-  {id:"4", title: 'WHY MEN LOVE BITCHES', description: '29',img:"./img/photo5.jpg",link:"/Detail4" },
-  {id:"5", title: 'THE ZURICH AXIOMS', description: '39', img:"./img/photo6.jpg",link:"/Detail5" },
-  {id:"6", title: 'QUEEN OF LIGHT', description: '29' ,img:"./img/photo7.jpg" ,link:"/Detail6"},
-  {id:"7", title: 'PATH OF THE DARK', description: '39' ,img:"./img/photo8.jpg" ,link:"/Detail7"},
-  {id:"8", title: 'THE SUBTLE ART OF NOT GIVING A F*CK', description: '49' ,img:"./img/photo9.jpg" ,link:"/Detail8"},
- ];
-
+  const data = [
+    {id:"1", title: 'THE POWER OF NOW', price: '49',img:"photo2.jpg",description:'THE POWER OF NOW'},
+    {id:"2", title: 'HOUSE OF SKY AND BREATH', price: '39',img:"photo3.jpg",description:'THE POWER OF NOW'},
+    {id:"3", title: 'RICH DAD POOR DAD', price: '49',img:"photo10.jpg" ,description:'THE POWER OF NOW'},
+    {id:"4", title: 'WHY MEN LOVE BITCHES', price: '29',img:"photo5.jpg" ,description:'THE POWER OF NOW'},
+    {id:"5", title: 'THE ZURICH AXIOMS', price: '39', img:"photo6.jpg" ,description:'THE POWER OF NOW'},
+    {id:"6", title: 'QUEEN OF LIGHT', price: '29' ,img:"photo7.jpg" ,description:'THE POWER OF NOW'},
+    {id:"7", title: 'PATH OF THE DARK', price: '39' ,img:"photo8.jpg" ,description:'THE POWER OF NOW'},
+    {id:"8", title: 'THE SUBTLE ART OF NOT GIVING A F*CK', price: '49' ,img:"photo9.jpg" ,description:'THE POWER OF NOW'}
+   ];
+console.log(data)
   return (
     <div>
   <Router>
     <Routes>
-      <Route path="/" element={<Home/>}/>
+      <Route path="/" element={<Aff/>}/>
         <Route path="/Shop" element={<Shop/>}/>
         <Route path="/Card" element={<Card/>}/>
-        <Route path="/Product" element={<Product/>}/>
+        <Route path="/Product" element={<Products data={data} />}/>
         <Route path="/Contact" element={<Contact/>}/>
         <Route path="/SignUp" element={<SignUp/>}/>
         <Route path="/Shop" element={<Shop/>}/>
-        
+        <Route path='/Product/:id' element={<Single data={data} />} />
 
-        
 
-      
-        
+
+
         <Route path="/Detail1" element={<Details
         img="./img/photo2.jpg"
         name="THE POWER OF NOW"

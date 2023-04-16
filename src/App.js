@@ -11,6 +11,7 @@ import Footer from "./Footer";
 import Timer from "./Timer";
 
 function App(){
+  
   return(
     <>
  <Nav/>
@@ -22,10 +23,7 @@ function App(){
 <br/>
 <br/>
 <Footer/>
-
-
  </>
- 
 
   )
 };
