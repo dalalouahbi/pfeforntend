@@ -1,11 +1,12 @@
 import {Link} from 'react-router-dom';
 import React, { Component }  from 'react';
 function Product(props){
+    console.log("productt",props)
     return (
       <div className="col">
         <div className="card shadow-sm">
             <Link to={`/Product/${props.data.id}`}>
-            <img className="bd-placeholder-img card-img-top" src={`img/${props.img}`} alt="" />
+            <img className="" src={props.data.img} alt="" width="90px" />
             </Link>
             <div className="card-body">
                 <p className="card-title">{props.data.title}</p>
