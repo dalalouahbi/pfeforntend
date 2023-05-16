@@ -3,6 +3,7 @@ import "./Details.css"
 import CardDetail from './CartDetails'
 import SectionDetail from './SectionDetail'
 import App from './RecherchBar'
+
 export default function Details(props) {
 	
   const footer={
@@ -12,14 +13,12 @@ export default function Details(props) {
     fontSize: "16px",
     textAlign: "center",
   }
-  const p1={
-backgroundColor:"orange",
-borderRadius:"5px",
-textAlign:"center",
-color:"black"
-
+  const po={
+	textAlign:"center",
+	marginLeft:"300px"
+	
   }
-  
+ 
   return (
     <div>
      <SectionDetail/>
@@ -42,10 +41,28 @@ color:"black"
 						<br/>
 						<br/>
 						<br/>
-						<p style={p1}><strong style={{color:"black"}}>Price:</strong> {props.pric}</p>
+						<p style={po}><strong style={{color:"black"}}></strong> {props.pric}</p>
           
-						<button type="button" class="btn btn-primary">Add to Cart</button>
-					</div>
+
+						<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <button  class="btn btn-primary btn-block" style={{width:"130px"}}>
+        <i class="fa fa-download"></i> Download
+      </button>
+    </div>
+    <div class="col-4">
+      <button class="btn btn-success btn-block" style={{width:"130px"}}>
+        <i class="fa fa-shopping-cart"></i> Add to Cart
+      </button>
+    </div>
+    <div class="col-4">
+      <button class="btn btn-info btn-block" style={{width:"130px"}}>
+        <i class="fa fa-credit-card"></i> Buy Now
+      </button>
+    </div>
+  </div>
+</div></div>
 				</div>     
 			</div>
 		</section>
@@ -58,28 +75,7 @@ color:"black"
 					</div>
 				</div>
 			</div>
-			<div className=' row col-12'>
-
-<CardDetail
-title="livraison disponible"
-src="./img/OIP.png"
-/>
-<CardDetail
-title="visitor"
-src="./img/R.png"
-
-/>
-<CardDetail
-title="payement securise"
-src="./img/pay1.jpeg"
-
-/>
-<CardDetail
-title="buy"
-src="./img/shopping-bag.png"
-
-/>
-</div>
+			
 
 		</section>
 	</main>

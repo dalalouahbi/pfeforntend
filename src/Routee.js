@@ -44,7 +44,7 @@ console.log(data)
 
         <Route path="/Detail1" element={<Details
         img="./img/photo2.jpg"
-        name="THE POWER OF NOW"
+        name="THE POWER OF now"
         description="
         Much more than simple principles and platitudes,
          The Power of Now takes readers on an inspiring 

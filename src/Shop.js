@@ -1,5 +1,5 @@
 import React from 'react';
-import Section2 from './Section2';
+// import Section2 from './Section2';
 import Slider from './SectionShop';
 const Shop = () => {
   const sectionStyle = {
@@ -26,8 +26,7 @@ const h1={
       
     </section>
 <Slider/>
-<Section2
-/>
+{/* <Section2/> */}
 </>
   );
 };

@@ -1,21 +1,35 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Section from './Section';
 import OurServices from './OurServices';
 import './App.css';
 import Section2 from './Section2';
 import Products from './Products';
+import { useState, useEffect } from 'react';
 
 export default function Aff() {
-    const data = [
-        {id:"1", title: 'THE POWER OF NOW', price: '49',img:"./img/photo2.jpg",description:'THE POWER OF NOW'},
-        {id:"2", title: 'HOUSE OF SKY AND BREATH', price: '39',img:"./img/photo3.jpg",description:'THE POWER OF NOW'},
-        {id:"3", title: 'RICH DAD POOR DAD', price: '49',img:"./img/photo10.jpg" ,description:'THE POWER OF NOW'},
-        {id:"4", title: 'WHY MEN LOVE BITCHES', price: '29',img:"./img/photo5.jpg" ,description:'THE POWER OF NOW'},
-        {id:"5", title: 'THE ZURICH AXIOMS', price: '39', img:"./img/photo6.jpg" ,description:'THE POWER OF NOW'},
-        {id:"6", title: 'QUEEN OF LIGHT', price: '29' ,img:"./img/photo7.jpg" ,description:'THE POWER OF NOW'},
-        {id:"7", title: 'PATH OF THE DARK', price: '39' ,img:"./img/photo8.jpg" ,description:'THE POWER OF NOW'},
-        {id:"8", title: 'THE SUBTLE ART OF NOT GIVING A F*CK', price: '49' ,img:"./img/photo9.jpg" ,description:'THE POWER OF NOW'}
-       ];
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    getData();
+  }, [])
+  console.log("final data", data)
+
+  function getData(){
+    fetch("http://127.0.0.1:8000/api/list")
+      .then((response) => { return response.json() })
+      .then((data) => { setData(data) })
+  }
+
+    // const data = [
+    //     {id:"1", title: 'THE POWER OF NOW', price: '49',img:"./img/photo2.jpg",description:'THE POWER OF NOW'},
+    //     {id:"2", title: 'HOUSE OF SKY AND BREATH', price: '39',img:"./img/photo3.jpg",description:'THE POWER OF NOW'},
+    //     {id:"3", title: 'RICH DAD POOR DAD', price: '49',img:"./img/photo10.jpg" ,description:'THE POWER OF NOW'},
+    //     {id:"4", title: 'WHY MEN LOVE BITCHES', price: '29',img:"./img/photo5.jpg" ,description:'THE POWER OF NOW'},
+    //     {id:"5", title: 'THE ZURICH AXIOMS', price: '39', img:"./img/photo6.jpg" ,description:'THE POWER OF NOW'},
+    //     {id:"6", title: 'QUEEN OF LIGHT', price: '29' ,img:"./img/photo7.jpg" ,description:'THE POWER OF NOW'},
+    //     {id:"7", title: 'PATH OF THE DARK', price: '39' ,img:"./img/photo8.jpg" ,description:'THE POWER OF NOW'},
+    //     {id:"8", title: 'THE SUBTLE ART OF NOT GIVING A F*CK', price: '49' ,img:"./img/photo9.jpg" ,description:'THE POWER OF NOW'},
+    //     {id:"4", title: 'WHY MEN LOVE BITCHES', price: '29',img:"./img/photo5.jpg" ,description:'THE POWER OF NOW'},
+    //   ];
   return (
         <div  className="">
      <div style={{fontFamily:" Arial, sans-serif"}}>
@@ -33,8 +47,8 @@ export default function Aff() {
 <br/>
 </div>
 <div style={{marginTop:"-110px" }} class="input-group mb-3"></div>
-<div className="card-list">
-    
+
+   
 <Products data={data}/>
     
       </div>
@@ -48,7 +62,7 @@ export default function Aff() {
 <Section2/>
 
     </div>
-    </div>
+    
 
   )
 }

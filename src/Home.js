@@ -13,14 +13,13 @@ const data = [
   {id:"5", title: 'THE ZURICH AXIOMS', description: '39', img:"./img/photo6.jpg",link:"/Detail5" },
   {id:"6", title: 'QUEEN OF LIGHT', description: '29' ,img:"./img/photo7.jpg" ,link:"/Detail6"},
   {id:"7", title: 'PATH OF THE DARK', description: '39' ,img:"./img/photo8.jpg" ,link:"/Detail7"},
-  {id:"8", title: 'THE SUBTLE ART OF NOT GIVING A F*CK', description: '49' ,img:"./img/photo9.jpg" ,link:"/Detail8"},
  ];
 
 const Card = ({ title, description,img,link }) => (
  
 
 			<div class="product">
-				<img src={img}/>
+				<img src={img} />
 
 				<div class="product-info">
 					<h4 class="product-title">

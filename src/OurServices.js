@@ -24,8 +24,8 @@ function OurServices() {
 			</div>
 			<div class="service">
 				<i class="fa fa-truck service-icon"></i>
-				<div class="service-title">delivery</div>
-				<div class="service-description">Free dellivery within 24 hours, cash on delivery.</div>
+				<div class="service-title">Trade books</div>
+				<div class="service-description">you can exchange books that they have already read or that they no longer need.</div>
 			</div>
 		</div>
 

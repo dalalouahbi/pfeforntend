@@ -1,11 +1,10 @@
 import React from 'react';
+import "./Details.css"
 
 const SectionDetail = () => {
   const sectionStyle = {
-    backgroundImage: 'url("./img/photo1.jpg")',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    height: '250px',
+    
+ 
    
   };
 const h1={
@@ -20,7 +19,7 @@ const h1={
 }
   return (
       <>
-    <section style={sectionStyle}>
+    <section  className='xx' style={sectionStyle}>
       { <h1 style={h1}>Details</h1> }
       
     </section>

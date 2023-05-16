@@ -1,72 +1,130 @@
-import React, { useState } from 'react';
-import Timer from './Timer';
+import React from 'react';
+import Section from './Section';
+import OurServices from './OurServices';
 import './App.css';
+import Section2 from './Section2';
+import Products from './Products';
+import { useState, useEffect } from 'react';
 
-const data = [
-  { title: 'Card 1', description: 'This is the first card.',img:"./img/photo1.jpg" , href:"/Product1" },
-  { title: 'Card 2', description: 'This is the second card.',img:"./img/photo1.jpg" , href:"/Product2" },
-  { title: 'Card 3', description: 'This is the third card.',img:"./img/photo1.jpg" , href:"/Product3" },
-  { title: 'Card 4', description: 'This is the fourth card.',img:"./img/photo1.jpg", href:"/Product4"  },
-  { title: 'Card 5', description: 'This is the fourth card.', img:"./img/photo1.jpg", href:"/Product5"  },
-  { title: 'Card 6', description: 'This is the fourth card.' ,img:"./img/photo1.jpg", href:"/Product6"   },
-  { title: 'Card 7', description: 'This is the fourth card.' ,img:"./img/photo1.jpg" , href:"/Product7"  },
-  { title: 'Card 8', description: 'This is the fourth card.' ,img:"./img/photo1.jpg", href:"/Product8"   },
-  { title: 'Card 9', description: 'This is the fourth card.' ,img:"./img/photo1.jpg", href:"/Product9"   },
-  { title: 'Card 10', description: 'This is the fourth card.' ,img:"./img/photo1.jpg", href:"/Product10"  },
-  { title: 'Card 11', description: 'This is the fourth card.' ,img:"./img/photo1.jpg", href:"/Product11"  },
-  { title: 'Card 12', description: 'This is the fourth card.' ,img:"./img/photo1.jpg", href:"/Product12"  },
-];
+export default function Aff() {
+  const [data, setData] = useState([]);
+  const [sortOrder, setSortOrder] = useState('');
+  const [category, setCategory] = useState('');
+  const [format, setFormat] = useState('');
 
-const Card = ({ title, description,img,href }) => (
- 
+  useEffect(() => {
+    getData();
+  }, [])
 
-			<div class="product">
-				<img src={img}/>
-
-				<div class="product-info">
-					<h4 class="product-title">
-                       { title }
-					</h4> <p></p>
-                    <i class="bi bi-star-fill"></i>
-					<p class="product-price">${description}</p>
- 
-					<a class="product-btn" href={href} style={{color:"white"}} >Buy Now</a>
-
-				</div>
-  </div>
-  
-);
-
-
-
-const App = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-
-  const handleSearch = event => {
-    setSearchTerm(event.target.value);
-  };
-
-  const filteredData = data.filter(item =>
-    item.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-  
-  return (
-    <div  className="">
- 
-       <div style={{marginTop:"-110px" }} class="input-group mb-3">
-        <input style={{width:"450px",height:"50px"}} type="text" placeholder="Search categories" 
-        value={searchTerm}
-        onChange={handleSearch}
-      />
-</div>
-      <div className="card-list">
-        {filteredData.map(item => (
-          <Card key={item.title} {...item} />
-        ))}
-       
-      </div>
-    </div>
-  );
+  function getData(){
+    fetch("http://127.0.0.1:8000/api/list")
+      .then((response) => { return response.json() })
+      .then((data) => { setData(data) })
+  }
+  async function search(key){
+    console.warn(key);
+    let result= await fetch("http://127.0.0.1:8000/api/search/"+key);
+    result= await result.json();
+    console.warn(result);
+    setData(result);
+}
+const handleSortChange = (e) => {
+  setSortOrder(e);
+  console.log('xxx',e)
+  handleSubmit(e);
+};
+const handleSubmit = (sort) => {
+  console.log('Sort Order:', sort);
+  fetch('http://127.0.0.1:8000/api/filtrer/'+sort, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ sort_order: sort }),
+  })
+    .then((response) => response.json())
+    .then((data) => {setData(data)})
+  console.log(' Order:', data);
+};
+const handleCategory = (e) => {
+  setCategory(e);
+  console.log('cat e',e)
+  handleSubmitCategory(e);
+};
+const handleSubmitCategory = (cat) => {
+  console.log('cat:', cat);
+  fetch('http://127.0.0.1:8000/api/grouper/'+cat, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ category: cat }),
+  })
+    .then((response) => response.json())
+    .then((data) => {setData(data)})
+  console.log(' cat:', data);
+};
+const handleFormat = (e) => {
+  setFormat(e);
+  console.log('format e',e)
+  handleSubmitFormat(e);
+};
+const handleSubmitFormat = (format) => {
+  console.log('format:', format);
+  fetch('http://127.0.0.1:8000/api/format/'+format, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ format: format }),
+  })
+    .then((response) => response.json())
+    .then((data) => {setData(data)})
+  console.log(' format:', format);
 };
 
-export default App;
+  return (
+        <div  className="">
+     <div style={{fontFamily:" Arial, sans-serif"}}>
+<div style={{marginTop:"-110px" }} class="input-group mb-3"></div>
+
+<input type="text" className='form-control' onChange={(e)=>search(e.target.value)} /> <br />
+<label>sort prix</label>
+<select name="sort_order" id="sort_order" value={sortOrder} onChange={(e)=>handleSortChange(e.target.value)}>
+        <option value="">Choisir un tri</option>
+        <option value="desc">Décroissant</option>
+        <option value="asc">Croissant</option>
+</select>
+<br/>
+<label>Group by category</label>
+<select name="category" id="category" value={category} onChange={(e)=>handleCategory(e.target.value)}>
+        <option value="">Choisir un category</option>
+        <option value="Philosophy">Philosophy</option>
+        <option value="personal development">personal developement</option>
+        <option value="science fiction">science fiction</option>
+
+</select>
+<label>Format</label>
+<select name="format" id="format" value={format} onChange={(e)=>handleFormat(e.target.value)}>
+        <option value="">Choisir un format</option>
+        <option value="audiobbok">audio book</option>
+        <option value="tangible">tangible</option>
+
+</select>
+<Products data={data}/>
+    
+      </div>
+      <br/>
+<br/>
+<br/>
+<br/>
+<br/><br/>
+
+
+{/* <Section2/> */}
+
+    </div>
+    
+
+  )
+}

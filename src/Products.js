@@ -2,7 +2,8 @@ import Productt from  './Productt';
 import React, { Component }  from 'react';
 
 function Products(props) {
-  console.log("hi",props)
+  console.log("hi data",props.data)
+  var x=props.data.books;
     return (
       <div class="container">
         <div class="row">
@@ -12,6 +13,7 @@ function Products(props) {
             })
           }
         </div>
+       
       </div>
     )
   }export default Products;

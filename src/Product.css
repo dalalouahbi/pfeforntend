@@ -61,7 +61,7 @@ h2{
 	background: #ffffff;
 	color: #21201e;
 	text-align: center;
-	width: 240px;
+	width: 260px;
 	height: 500px;
 	padding: 2rem;
 	display: flex;
@@ -85,6 +85,7 @@ h2{
 }
 
 .product img {
+	width: 	170px;
 	height: 200px;
 	margin: 1rem;
 	transition: all 0.3s;
@@ -94,7 +95,7 @@ h2{
 	color: #dbdada;
 	display: inline-block;
 	text-decoration: none;
-	background-color:#007bff;
+	background-color:#ffffff;
 	padding: 1.2rem 3rem;
 	border-radius: 1rem;
 	margin-top: 1rem;
@@ -103,7 +104,7 @@ h2{
 }
 
 .product a:hover{
-	transform: scale(1.1);
+	transform: scale(1.02);
 }
 
 
@@ -258,3 +259,7 @@ h2{
 		  
 	  }
 	  
+#bt{
+width: 4.6cm;
+height: 1.3cm;
+}
