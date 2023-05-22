@@ -9,6 +9,8 @@ const CardDetail = (props) => {
      
       <div className="card-title">{props.title}</div>
       <div className="card-info">{props.info}</div>
+      <div className="card-info">vv</div>
+
 
 
     </div>

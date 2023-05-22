@@ -88,7 +88,7 @@ const handleSubmitFormat = (format) => {
      <div style={{fontFamily:" Arial, sans-serif"}}>
 <div style={{marginTop:"-110px" }} class="input-group mb-3"></div>
 
-<input type="text" className='form-control' onChange={(e)=>search(e.target.value)} /> <br />
+<input  type="text" className='form-control' onChange={(e)=>search(e.target.value)} /> <br />
 <label>sort prix</label>
 <select name="sort_order" id="sort_order" value={sortOrder} onChange={(e)=>handleSortChange(e.target.value)}>
         <option value="">Choisir un tri</option>
