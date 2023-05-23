@@ -8,6 +8,7 @@ export default function Nav() {
   console.warn(user)
   function Logout(){
     console.log("hi");
+    
   //     localStorage.clear();
   //     navigate('/register')
    }
