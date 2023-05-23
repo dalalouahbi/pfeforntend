@@ -20,8 +20,6 @@ export default function Nav() {
   // const logout=()=>{
   //   console.log("hi")
   // }
-
-
   return (
     <div>
       <nav className="navbar navbar-expand-md bg-light">
