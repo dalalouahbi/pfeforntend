@@ -8,7 +8,7 @@ export default function Nav() {
   console.warn(user)
   function Logout(){
     console.log("hi");
-    
+
   //     localStorage.clear();
   //     navigate('/register')
    }
@@ -20,6 +20,7 @@ export default function Nav() {
 //   }
   // const logout=()=>{
   //   console.log("hi")
+  
   // }
   return (
     <div>
