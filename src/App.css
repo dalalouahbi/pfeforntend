@@ -225,3 +225,74 @@ section {
   font-family: Arial, sans-serif;
 	
 }
+/* Styles for container */
+.container {
+  display: flex;
+  align-items: center;
+}
+
+/* Styles for input */
+.form-control {
+  flex: 1;
+  margin-right: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-control:hover {
+  background-color: #f5f5f5;
+}
+
+/* Styles for labels */
+label {
+  margin-right: 10px;
+  font-size: larger;
+}
+
+/* Styles for selects */
+select {
+  width: 200px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000000'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 12px;
+}
+
+/* Styles for line breaks */
+br {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group {
+  margin-top: -110px;
+}
+
+.input-group,
+.container,
+.container select,
+.container input[type="text"] {
+  font-family: Arial, sans-serif;
+}
+
+.container select,
+.container input[type="text"] {
+  width: 500px;
+  border-radius: 5px;
+}
+
+
+
+
+

@@ -8,9 +8,9 @@ import { useState, useEffect } from 'react';
 
 export default function Aff() {
   const [data, setData] = useState([]);
-  const [sortOrder, setSortOrder] = useState('');
-  const [category, setCategory] = useState('');
-  const [format, setFormat] = useState('');
+  const [sortOrder, setSortOrder] = useState(' ');
+  const [category, setCategory] = useState(' ');
+  const [format, setFormat] = useState(' ');
 
   useEffect(() => {
     getData();
@@ -87,24 +87,26 @@ const handleSubmitFormat = (format) => {
         <div  className="">
      <div style={{fontFamily:" Arial, sans-serif"}}>
 <div style={{marginTop:"-110px" }} class="input-group mb-3"></div>
-
-<input  type="text" className='form-control' onChange={(e)=>search(e.target.value)} /> <br />
-<label>sort prix</label>
+<div className=''>
+<input  type="text" className='' style={{width:"500px", borderRadius:"5px",
+    width: "500px",
+    borderRadius: "5px",
+    float: "right" /* Aligns the input to the right side */,
+    marginRight: "16px" /* Adds some space between the input and other elements */,
+  }} placeholder="Search" onChange={(e)=>search(e.target.value)} /> <br />  
 <select name="sort_order" id="sort_order" value={sortOrder} onChange={(e)=>handleSortChange(e.target.value)}>
-        <option value="">Choisir un tri</option>
+        <option value="" >Sort prix</option>
         <option value="desc">Décroissant</option>
         <option value="asc">Croissant</option>
 </select>
-<br/>
-<label>Group by category</label>
+
 <select name="category" id="category" value={category} onChange={(e)=>handleCategory(e.target.value)}>
-        <option value="">Choisir un category</option>
+        <option value="">Group by category</option>
         <option value="Philosophy">Philosophy</option>
         <option value="personal development">personal developement</option>
         <option value="science fiction">science fiction</option>
 
 </select>
-<label>Format</label>
 <select name="format" id="format" value={format} onChange={(e)=>handleFormat(e.target.value)}>
         <option value="">Choisir un format</option>
         <option value="audiobbok">audio book</option>
@@ -119,7 +121,7 @@ const handleSubmitFormat = (format) => {
 <br/>
 <br/>
 <br/><br/>
-
+</div>
 
 {/* <Section2/> */}
 

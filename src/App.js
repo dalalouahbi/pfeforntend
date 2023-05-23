@@ -9,12 +9,14 @@ import Shop from "./Shop";
 import Product from "./Product";
 import Footer from "./Footer";
 import Timer from "./Timer";
-
+import { BrowserRouter as Router } from 'react-router-dom';
 function App(){
   
   return(
     <>
+        <Router>
  <Nav/>
+    </Router>
 <div>
    { <Routee/> }
 </div>

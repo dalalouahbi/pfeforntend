@@ -3,7 +3,7 @@ import Card from "./Timer";
 import Shop from "./Shop";
 import Home from "./Home";
 import Aff from "./Aff";
-
+import QandA from './QandA';
 import Contact from "./Contact"
 import Details from './Details';
 import SignUp from "./SignUp"
@@ -12,7 +12,7 @@ import { BrowserRouter as Router ,Route,Routes} from "react-router-dom";
 import { useState, useEffect } from 'react';
 import "./App.css";
 import Products from './Product';
-
+import CreatCompte from './CreatCompte';
  function Routee() {
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -51,6 +51,8 @@ import Products from './Product';
         <Route path="/SignUp" element={<SignUp/>}/>
         <Route path="/Shop" element={<Shop/>}/>
         <Route path='/Product/:id' element={<Single/>} />
+        <Route path="/QandA" element={<QandA/>}/>
+        <Route path="/CreatCompte" element={<CreatCompte/>}/>
 
 
 
