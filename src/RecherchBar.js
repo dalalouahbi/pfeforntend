@@ -105,6 +105,10 @@ const handleSubmitFormat = (format) => {
         <option value="Philosophy">Philosophy</option>
         <option value="personal development">personal developement</option>
         <option value="science fiction">science fiction</option>
+        <option value="science fiction">romance books</option>
+        <option value="science fiction">Adventure Novels</option>
+
+        
 
 </select>
 <select name="format" id="format" value={format} onChange={(e)=>handleFormat(e.target.value)}>

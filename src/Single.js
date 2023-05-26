@@ -3,14 +3,12 @@ import axios from 'axios';
 
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import SectionDetail from './SectionDetail';
 import "./Details.css"
 export default function Single() {
   const [data, setData] = useState([]);
   const [avis, setAvis] = useState([]);
   const [book,setBook]=useState([]);
-  const [dataB, setDatab] = useState({ category: '' });
 
   const { id } = useParams();
   console.log("params", id)
@@ -75,18 +73,21 @@ export default function Single() {
               <img className="w" src={"http://127.0.0.1:8000/" + data.file_path} alt="ii" width="350px" height="350px" />
             </div>
             <div class="col-md-6">
-              <h1 className='h1' style={{ color: "#007bff" }} >{data.titre}////{data.auteur}</h1>
+              <h1 className='h1' style={{ color: "#068DA9" }} >{data.titre}</h1>
               <br />
+              <h4 style={{}}>{data.auteur}</h4>
               <br />
               <br />
 
 
               <p style={{ fontSize: "17px" }}>{data.description}</p>
-              <p style={{ fontSize: "17px" }}>{data.category}</p>
+              <p style={{ fontSize: "17px" }}>Category:{data.category}</p>
+              <p style={{ fontSize: "17px" }}>Format:{data.format}</p>
+
 
 
               <br />
-              <p style={p1}><strong style={{ color: "black" }}>{data.price}$</strong> {data.format}</p>
+              <p style={p1}><strong style={{ color: "black" }}>{data.price}$</strong></p>
 
               <br />
 
@@ -113,7 +114,6 @@ export default function Single() {
               </div>
 
             </div>
-            <p > <Link to={"/"} className='A'> <i class="fa fa-reply" id='io' aria-hidden="true"></i>Retourner a la page d accceuil</Link></p>
           </div>
         </div>
       </section>
