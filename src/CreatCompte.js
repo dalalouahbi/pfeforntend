@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
 import "./Creat.css";
 export default function CreatCompte() {
   useEffect(() => {
@@ -30,7 +32,7 @@ export default function CreatCompte() {
   }
   async function login() {
     let item = { name, prenom, email, password }
-    console.log(item)
+    console.log("item",item)
     let result = await fetch("http://127.0.0.1:8000/api/signup", {
       method: 'POST',
       body: JSON.stringify(item),
@@ -41,10 +43,14 @@ export default function CreatCompte() {
     }
     )
     result = await result.json()
-    localStorage.setItem("user.info", JSON.stringify(result))
+    localStorage.setItem("user.info", JSON.stringify(result.user))
     navigate('/')
-    console.warn("result", result)
+    console.log("result create compte", result.user)
   }
+//   axios.get('/sanctum/csrf-cookie').then(response => {
+//   axios.post('http://127.0.0.1:8000/api/register',item).then()
+    
+// });
   return (
     <>
       <div id="login-box">

@@ -4,7 +4,10 @@ import { BrowserRouter as Router, Link, NavLink, Route, Switch } from 'react-rou
 export default function Nav() {
   let user=JSON.parse(localStorage.getItem('user.info'))
   let navigate=useNavigate()
-  console.warn(user)
+  let u=user.user
+  console.log("user",user)
+  console.log("u",u)
+
   function Logout(){
       localStorage.clear();
       navigate('/')
@@ -60,10 +63,12 @@ export default function Nav() {
 <>
 <button style={{width:"210px"}} class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   <i className="fa fa-user"></i>
-       {user.name}
+       {user.user.name}
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
   <a  class="dropdown-item" href="#"><button classNmae="text-white " style={{width:"170px",backgroundColor:"white",borderColor:"white", boxShadow:"white"}} onClick={Logout}>Logout</button></a>
+  <a class="dropdown-item" href="/Panier">Panier</a>
+
 </div>
   </>
 ):( 

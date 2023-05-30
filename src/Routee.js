@@ -16,6 +16,8 @@ import { useState, useEffect } from 'react';
 import "./App.css";
 import Products from './Product';
 import CreatCompte from './CreatCompte';
+import Panier from './Panier';
+
  function Routee() {
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -48,6 +50,8 @@ import CreatCompte from './CreatCompte';
         <Route path="/tradeBook" element={<TradeBook/>}/>
         <Route path="/tradeBookList" element={<TradeBooks/>}/>
         <Route path="/TradeBookSingle/:id" element={<TradeBookSingle/>}/>
+        <Route path="/Panier" element={<Panier/>}/>
+
 
        
    </Routes>
