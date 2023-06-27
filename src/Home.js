@@ -3,9 +3,6 @@ import Section from './Section';
 import OurServices from './OurServices';
 import './App.css';
 import Section2 from './Section2';
-
-
-
 const Card = ({ title, description,img,link }) => (
  
 
@@ -25,20 +22,12 @@ const Card = ({ title, description,img,link }) => (
   </div>
   
 );
-
-
-
-
-  
-  
 const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleSearch = event => {
     setSearchTerm(event.target.value);
   };
-
-
   return (
     <div  className="">
  <div style={{fontFamily:" Arial, sans-serif"}}>

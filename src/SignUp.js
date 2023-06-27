@@ -2,6 +2,7 @@ import React from 'react';
 import './SignUp.css';
 import { useState ,useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 function Login() {
   const [email, setEmail] = useState('')
@@ -12,46 +13,10 @@ function Login() {
   const navigate = useNavigate();
   useEffect(() => {
     if (localStorage.getItem('user.info')) {
-      // navigate('/')
+      navigate('/')
     }
   }, [])
-  // async function signup() {
-  //   let item = {email, password }
-  //   console.log(item)
-  //   let result = await fetch("http://127.0.0.1:8000/api/login", {
-  //     method: 'POST',
-  //     body: JSON.stringify(item),
-  //     headers: {
-  //       "Content-type": 'application/json',
-  //       "Accept": 'application/json'
-  //     }
-  //   }
-  //   )
-  //   if (response.ok) {
-  //     let data = await response.json();
-  //     const { user, token } = data;
-  //     console.log(user);
-  //     console.log(token);
-  //     // Faites ce que vous devez faire avec les données de l'utilisateur
-  //   } else {
-  //     throw new Error('Erreur lors de la connexion');
-  //   }
-  // } catch (error) {
-  //   // Gérez les erreurs de connexion
-  //   console.log(error);
-  // }
 
-
-
-  //   // result = await result.json()
-  //   // console.log("result signup", result)
-  //   // console.log("result signup", result)
-
-
-  //   // localStorage.setItem("user.info", JSON.stringify(result))
-  //   //  navigate('/')
-  //   // console.warn("result signup", result)
-  // }
   async function signup() {
     let item = { email, password };
     console.log(item);
@@ -67,28 +32,37 @@ function Login() {
       });
       console.log(response)
   
-      if (response.ok) {
+      if (response.status===200) {
         let data = await response.json();
-      console.log(data)
+        console.log("data signup",data.user)
+        console.log("data signup",data)
 
         const { user, token } = data;
-        console.log(user.name);
-        console.log(token);
-        // Faites ce que vous devez faire avec les données de l'utilisateur
-        localStorage.setItem("user.info", JSON.stringify(data))
+        console.log("name",user.name);
+        console.log("token",token);
+        Swal.fire({
+          icon: 'success',
+          text: 'succefully !',
+        })
+        localStorage.setItem("user.info", JSON.stringify(user))
         navigate('/')
+        window.location.reload();
+
       } else {
-        throw new Error('Erreur lors de la connexion');
+        Swal.fire({
+          icon: 'warning',
+          text: 'error data !',
+        })
+        // throw new Error('Erreur lors de la connexion');
       }
     } catch (error) {
-      // Gérez les erreurs de connexion
       console.log(error);
     }
   }
   
   return (
     <div className="login-container">
- @csrf
+
       <video className="background-video" autoPlay loop muted>
         <source src="./img/back.mp4" type="video/mp4" />
       </video>
@@ -97,7 +71,7 @@ function Login() {
           <input style={{width:"360px"}} type="text" placeholder="email" name="email" onChange={(e)=>setEmail(e.target.value)}/> 
 <input style={{width:"360px"}} type="password" name="password"placeholder="Password" onChange={(e)=>setPassword(e.target.value)} />
           <button type="submit" onClick={signup} >Login</button>
-          <button type="submit" style={{backgroundColor:"orange"}}>Create account</button>
+          <button type="submit" style={{backgroundColor:"orange"}}><a href='/SignUp' style={{textDecoration:"none",color:"white"}}>Create account</a></button>
         <br/>
           <div class="container">
   <div class="row">

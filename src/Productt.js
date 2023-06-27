@@ -26,11 +26,12 @@ function Product(props){
 					</h5>
                
                 <p class="product-price">{props.data.price} $</p>
+                
                 {/* <p className="card-text">{props.data.description}</p> */}
                 <div className="d-flex justify-content-between align-items-center">
                     <div className="btn-group">
             <Link to={`/Product/${props.data.id}`}>
-            <button type="button" class="btn btn-primary" id='bt'>Buy Now</button>
+            <button type="button" class="btn btn-primary" id='bt' >Buy Now </button>
             </Link>
                     </div>
                     </div>

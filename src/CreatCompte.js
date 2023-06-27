@@ -2,12 +2,13 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 import "./Creat.css";
 export default function CreatCompte() {
   useEffect(() => {
     if (localStorage.getItem('user.info')) {
-      // navigate('/')
+      navigate('/')
     }
   }, [])
   const navigate = useNavigate();
@@ -42,9 +43,25 @@ export default function CreatCompte() {
       }
     }
     )
+    // console.log("resultct",result)
     result = await result.json()
-    localStorage.setItem("user.info", JSON.stringify(result.user))
-    navigate('/')
+    console.log("resultct",result)
+    if(result.user){
+      localStorage.setItem("user.info", JSON.stringify(result.user))
+      Swal.fire({
+        icon: 'success',
+        text: 'Successfully data!',
+      })
+      navigate('/')
+      window.location.reload();
+
+    }else{
+      Swal.fire({
+        icon: 'warning',
+        text: 'error data !',
+      })
+    }
+  
     console.log("result create compte", result.user)
   }
 //   axios.get('/sanctum/csrf-cookie').then(response => {

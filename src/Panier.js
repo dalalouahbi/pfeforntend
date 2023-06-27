@@ -1,31 +1,49 @@
-import React from 'react'
+import React from 'react';
+import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import "./Panier.css"
 export default function Panier() {
   const [data, setData] = useState([]);
-//   useEffect( async ()=>{
-//     let result =await fetch("http://127.0.0.1:8000/api/card");
-//     let fresult =await result.json();
-//     setData("card data",fresult);
-//   },[])
+  let user=JSON.parse(localStorage.getItem('user.info'));
+  // console.log("Panier user",user.id)
+let Nuser=user.id
+  var totalPrcie=0
   useEffect(() => {
     getData();
   }, [])
-  console.log("final data", data)
+  console.log("panier data", data)
   async function deleteOperation(id){
     let result=await fetch("http://127.0.0.1:8000/api/delete/"+id,{
       method:"DELETE"
     });
     result= await result.json();
+    if (result.status ===200) {
+      Swal.fire({
+        icon: 'success',
+        text: ' card delete successuflty!',
+      })
+    }
+    else{
+    Swal.fire({
+      icon: 'warning',
+      text: 'error  Add !',
+    })
+  }
     getData();
     console.warn("delee result",result)
   }
   function getData(){
-    fetch("http://127.0.0.1:8000/api/card")
+    fetch("http://127.0.0.1:8000/api/card/"+Nuser)
       .then((response) => { return response.json() })
       .then((data) => { setData(data) })
   }
+
   return (
-    <div>
+    <div className='container'>
+<br/>
+<br/>
+
         <table class="table">
   <thead class="thead-light">
     <tr>
@@ -40,11 +58,13 @@ export default function Panier() {
   <tbody>
     {
         data.map((card,index)=>{
+          totalPrcie+=card.price*card.quantity
             return(
                 <tr key={index}>
                     <td><img src={"http://127.0.0.1:8000/"+card.product_image} width="50px" /></td>
                     <td>{card.product_name}</td>
               <td>{card.price}</td>
+      
               <td>{card.quantity}</td>
               <td>{card.total_price}</td>
             <td><button type="button" class="btn btn-danger" onClick={()=> deleteOperation(card.id)} >Delete</button></td>
@@ -52,44 +72,15 @@ export default function Panier() {
             )
         })
     }
+  
+    <div class="dd">
+      <h3 style={{}}>Total:{totalPrcie}$</h3>
+      <Link to="/checkOut"><button class="btn btn-primary">checkOut</button></Link>
+    </div>
   </tbody>
 </table>
-
-
-    {/* <div className="col-sm-6 offset-sm-3">
-      
-      <h1>product list</h1>
-      <Table>
-        <tr>
-          <td>id</td>
-          <td>name</td>
-          <td>price</td>
-          <td>description</td>
-          <td>image</td>
-          <td>operations</td>
-        </tr>
-        {/* {
-          data.map((item) => 
-            <tr>
-              <td>{item.id}</td>
-              <td>{item.name}</td>
-              <td>{item.price}</td>
-              <td>{item.description}</td>
-              <td><img src={"http://127.0.0.1:8000/"+item.file_path} width="50px" /></td>
-              <td><span onClick={()=> deleteOperation(item.id)} className='deleted'>deleted</span></td>
-              <td>
-                <Link to={"update/"+item.id}>
-                <span className='update'>update</span>
-                </Link>
-                </td>
-
-
-            </tr>
-          )
-        } */}
-      {/* </Table> */}
-    {/* </div>  */}
     </div>
 
   )
-}
+
+      }

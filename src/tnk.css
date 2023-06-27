@@ -1,0 +1,41 @@
+.card {
+    display: inline-block;
+    width: 200px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-body {
+    padding: 10px;
+  }
+  
+  .card-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .card-title:hover {
+    color: #ff0000; /* change the color to your desired hover effect */
+  }
+  
+  a {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+    color: #ff0000; 
+  }
+  

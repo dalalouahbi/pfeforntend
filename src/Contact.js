@@ -27,7 +27,7 @@ import React, { useState } from 'react';
         <form onSubmit={handleSubmit}>
           <div class="form-group">
             <label for="name">Name:</label>
-            <input type="text" class="form-control"  id="username" value={username} onChange={handleUsernameChange} required style={{width:"500px"}} placeholder="Enter your name"/>
+            <input type="" class="form-control"  id="username" value={username} onChange={handleUsernameChange} required style={{width:"500px"}} placeholder="Enter your name"/>
           </div>
           <div class="form-group">
             <label for="email">Email:</label>
@@ -37,7 +37,7 @@ import React, { useState } from 'react';
             <label for="message">Message:</label>
             <textarea class="form-control" id="message" rows="5" placeholder="Enter your message"></textarea>
           </div>
-          <button type="submit" class="btn btn-primary">Send</button>
+          <button type="submit" style={{marginLeft:"305px",width:"200px"}} class="btn btn-primary">Send</button>
         </form>
       </div>
       </div>

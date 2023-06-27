@@ -1,10 +1,7 @@
 import React from 'react';
-
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import "./Details.css"
-
-
 export default function TradeBookSingle() {
   const [data, setData] = useState([]);
   const { id } = useParams();
@@ -47,8 +44,8 @@ export default function TradeBookSingle() {
               <br />
 
 
-              <p style={{ fontSize: "17px" }}> description:{data.description}</p>
-              <p style={{ fontSize: "17px" }}>avis:{data.avis}</p>
+              <p style={{ fontSize: "17px" }}> <span style={{ color: "#068DA9" }}>description:</span>{data.description}</p>
+              <p style={{ fontSize: "17px" }}><span style={{ color: "#068DA9" }}>avis:</span>{data.avis}</p>
 
 
 
@@ -62,7 +59,7 @@ export default function TradeBookSingle() {
             
                   <div class="col-4">
                     <button class="btn btn-info btn-block" style={{ width: "130px" }}>
-                      <i class="fa fa-credit-card"></i> Buy Now
+                      <i class="fa fa-credit-card"></i><a href='/MessageTrade'>Buy Now</a> 
                     </button>
                   </div>
                 </div>

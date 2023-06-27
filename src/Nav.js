@@ -1,33 +1,17 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BrowserRouter as Router, Link, NavLink, Route, Switch } from 'react-router-dom';
 export default function Nav() {
   let user=JSON.parse(localStorage.getItem('user.info'))
-  let navigate=useNavigate()
-  let u=user.user
   console.log("user",user)
-  console.log("u",u)
+
+  let navigate=useNavigate()
 
   function Logout(){
       localStorage.clear();
       navigate('/')
-  // console.warn(user)
-  // function Logout(){
-  //   console.log("hi");
 
-  //     localStorage.clear();
-  //     navigate('/register')
    }
-//   function logout() {
-//     // localStorage.clear();
-// console.log("hi");
-//     // localStorage.removeItem('user.info');
-//     //  navigate('/SignUp');
-//   }
-  // const logout=()=>{
-  //   console.log("hi")
-  
-  // }
+
   return (
     <div>
               <nav className="navbar navbar-expand-md bg-light">
@@ -43,18 +27,19 @@ export default function Nav() {
             <li className="nav-item">
               <a className="nav-link" href="/Shop">Shop</a>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a className="nav-link" href="/tradeBook">Trade book</a>
+            </li> */}
+            <li className="nav-item">
+              <a className="nav-link" href="/tradeBookList">Book Exchange</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/tradeBookList">Trade book list</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/QandA">Q&A</a>
+              <a className="nav-link" href="/AboutUs">About</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/contact">Contact</a>
             </li>
+            
           </ul>
            <ul className="navbar-nav ml-auto">
             <li className="nav-item dropdown">
@@ -63,15 +48,17 @@ export default function Nav() {
 <>
 <button style={{width:"210px"}} class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   <i className="fa fa-user"></i>
-       {user.user.name}
+      {user.name}
   </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-  <a  class="dropdown-item" href="#"><button classNmae="text-white " style={{width:"170px",backgroundColor:"white",borderColor:"white", boxShadow:"white"}} onClick={Logout}>Logout</button></a>
+  <div class="dropdown-menu" style={{width:"210px"}} aria-labelledby="dropdownMenuButton">
+              <a className="dropdown-item" href="/tradeBook">Trade book</a>
   <a class="dropdown-item" href="/Panier">Panier</a>
+
+  <a  class="dropdown-item" href='#' classNmae="text-white " style={{width:"170px",backgroundColor:"white"}} onClick={Logout}>Logout</a>
 
 </div>
   </>
-):( 
+):(  
  <> 
 <button style={{width:"210px"}} class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   <i className="fa fa-user"></i>
@@ -79,10 +66,10 @@ export default function Nav() {
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" href="/SignUp">SignUp</a>
-    <a class="dropdown-item" href="/CreatCompte">login</a>
+    <a class="dropdown-item" href="/Login">Login</a>
   </div>
   </>
-)}
+)} 
         </div>
 
             </li>
@@ -91,22 +78,6 @@ export default function Nav() {
 
       </nav>
     </div>
-    )}
-  
-        {/* <a className="nav-link dropdown-toggle" href="#" id="userDropdown" data-toggle="dropdown">
-                {user ? (
-                  <>
-                    <i className="fa fa-user"></i> {user.name}
-                    <div className="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                    <button onClick={Logout} className="dropdown-item">Logout</button> 
-                    <NavLink to="/contact" activeClassName="active">Category 2</NavLink>
-                    <a className="dropdown-item" onClick={Logout}>Logout</a>
-                    </div>
-                 </> 
-                ):(  
-                  <div className="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                    <a className="dropdown-item" href="/SignUp">Sign up</a>
-                    <a className="dropdown-item" href="/CreatCompte">Login</a>
-                  </div>
-                 )} 
-              </a> */}
+    );
+  }
+ 

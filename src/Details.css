@@ -50,15 +50,6 @@ margin: 0;
   .heart-icon.liked {
 	color: red;
   }
-  
-
-
-
-
-  
-
-
-
   .card {
 	display: flex;
 	flex-direction: column;
@@ -96,7 +87,7 @@ margin: 0;
   }
   .h1{
 	font-size: 37px;
-	text-shadow: 2px 2px 2px ;
+	text-shadow: 1px 1px 1px ;
 	
   }
   .xx {
@@ -137,3 +128,117 @@ margin: 0;
 	background-color:green;
 	border-color:green;
 }
+body {
+    background-color: #eee
+}
+
+.card {
+    border: none;
+    border-radius: 10px
+}
+
+.c-details span {
+    font-weight: 300;
+    font-size: 13px
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    background-color: #eee;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 39px
+}
+
+.badge span {
+    background-color: #fffbec;
+    width: 60px;
+    height: 25px;
+    padding-bottom: 3px;
+    border-radius: 5px;
+    display: flex;
+    color: #fed85d;
+    justify-content: center;
+    align-items: center
+}
+
+.progress {
+    height: 10px;
+    border-radius: 10px
+}
+
+.progress div {
+    background-color: red
+}
+
+.text1 {
+    font-size: 14px;
+    font-weight: 600
+}
+
+.text2 {
+    color: #a5aec0
+}
+
+
+
+
+.i {
+	display: flex;
+	align-items: center;
+  }
+  
+  .i {
+	display: flex;
+  }
+  
+ 
+  
+  .tn {
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+  }
+  
+  .for {
+	width: 5px;
+	text-align: center;
+  }
+  
+
+
+
+
+  .containerR {
+    margin-right: 290px;
+    
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+
+  .input-group-append {
+    margin-left: 1rem;
+  }
+
+  .form {
+    width: 5rem;
+    text-align: center;
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+  .a{
+	text-decoration: none;
+	color: #fffbec;
+	font-size: 16px;
+	padding-right: 12px;
+  }
+  .a:hover{
+	color: #ccc;
+	text-decoration: none;
+  }

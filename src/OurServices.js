@@ -23,7 +23,8 @@ function OurServices() {
 				<div class="service-description">Listen to your favorite books on-the-go with our extensive collection of audio books.</div>
 			</div>
 			<div class="service">
-				<i class="fa fa-truck service-icon"></i>
+			<i style={{color:"#007CFA",fontSize:"60px",height:"85px"}} class="fa fa-exchange" aria-hidden="true"></i>
+<br/>
 				<div class="service-title">Trade books</div>
 				<div class="service-description">you can exchange books that they have already read or that they no longer need.</div>
 			</div>

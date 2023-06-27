@@ -89,11 +89,14 @@ const handleSubmitFormat = (format) => {
 <div style={{marginTop:"-110px" }} class="input-group mb-3"></div>
 <div className=''>
 <input  type="text" className='' style={{width:"500px", borderRadius:"5px",
-    width: "500px",
+    height:"46px",
+    marginTop:"-2px",
     borderRadius: "5px",
     float: "right" /* Aligns the input to the right side */,
-    marginRight: "16px" /* Adds some space between the input and other elements */,
-  }} placeholder="Search" onChange={(e)=>search(e.target.value)} /> <br />  
+    marginRight: "104px" /* Adds some space between the input and other elements */,
+  }} placeholder="Search" onChange={(e)=>search(e.target.value)} /> 
+    
+  <div style={{marginLeft:"110px",marginTop:"-25px",}}>
 <select name="sort_order" id="sort_order" value={sortOrder} onChange={(e)=>handleSortChange(e.target.value)}>
         <option value="" >Sort prix</option>
         <option value="desc">Décroissant</option>
@@ -103,20 +106,22 @@ const handleSubmitFormat = (format) => {
 <select name="category" id="category" value={category} onChange={(e)=>handleCategory(e.target.value)}>
         <option value="">Group by category</option>
         <option value="Philosophy">Philosophy</option>
-        <option value="personal development">personal developement</option>
-        <option value="science fiction">science fiction</option>
-        <option value="science fiction">romance books</option>
-        <option value="science fiction">Adventure Novels</option>
+        <option value="personal development">Personal developement</option>
+        <option value="science fiction">Science fiction</option>
+        <option value="science fiction">Romance books</option>
+        <option value="science fiction">Adventure novels</option>
+        <option value="science fiction">Crime novel</option>
+
 
         
 
 </select>
 <select name="format" id="format" value={format} onChange={(e)=>handleFormat(e.target.value)}>
-        <option value="">Choisir un format</option>
-        <option value="audiobbok">audio book</option>
-        <option value="tangible">tangible</option>
+        <option value="">Choose format</option>
+        <option value="audiobbok">Audio book</option>
+        <option value="tangible">Pdf</option>
 
-</select>
+</select></div>
 <Products data={data}/>
     
       </div>
